@@ -1,0 +1,134 @@
+
+$transition: all 0.3s ease-in-out;
+$iconSize: 35px;
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--bs-gray-100);
+}
+
+@mixin flexCenter($jc: center, $ai: center, $display: flex) { 
+  display: $display;
+  justify-content: $jc;
+  align-items: $ai;  
+}
+
+.slider-section {
+  position: relative;
+  padding: 0 5vw;
+
+  .slider-container {
+    position: relative;
+    max-width: 1440px;
+    margin-inline: auto;
+    border-radius: .5rem;
+    overflow: hidden;
+
+    .slide-container {
+      background-color: #fff;
+      &:focus {outline: none;}
+      img { max-width: 100%; }
+    }
+  }
+}
+
+.topLogo {
+  position: relative;
+  a {
+    font-size: 1.25rem;
+    line-height: 0;
+    font-family: "roboto";
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: var(--bs-info);
+    i {font-size: 2rem;}
+  }
+}
+
+.special-cards-section {
+  position: relative;
+
+  .cord-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .5rem;
+    min-height: 250px;
+    max-height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: .5s ease-in;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+    .content {
+      padding: 1.5rem 1rem 1.5rem 1.5rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      justify-content: space-between;
+      align-items: start;
+      height: 100%;
+      width: 60%;
+      h4, h6 {color: inherit;}
+      a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: var(--afterColor);
+        font-size: 0.9rem;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: var(--afterColor);
+          width: 0;
+          height: 1px;
+          transition: $transition;
+        }
+        
+        &:hover::after {left: 0; width: 100%;}
+
+      }
+    }
+  }
+}
+
+.top-user-profile-nav {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    position: relative;
+    width: $iconSize;
+    height: $iconSize;
+    border-radius: .2rem;
+    @include flexCenter();
+    color: var(--bs-gray-700);
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--bs-primary);
+      color: var(--bs-white);
+    }
+
+  }
+}
